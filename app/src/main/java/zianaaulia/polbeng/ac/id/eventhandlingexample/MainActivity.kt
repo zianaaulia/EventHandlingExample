@@ -11,10 +11,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnDisplayMessage.setOnClickListener(object: View.OnClickListener{
-            override fun onClick(v: View) {
-                Toast.makeText(applicationContext,"Ziana Aulia",
-                Toast.LENGTH_LONG).show()
+        //Menampilkan pesan setelah di klik
+        btnDisplayMessage.setOnClickListener {
+            Toast.makeText(
+                applicationContext, "Ziana Aulia",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+        //Fungsi untuk menangani event onLongClickListener
+        btnDisplayMessage.setOnLongClickListener(object: View.OnLongClickListener
+        {
+            override fun onLongClick(v: View?): Boolean {
+                return true
             }
         })
     }
